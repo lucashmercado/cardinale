@@ -290,3 +290,66 @@
   .page-title  { font-size: 1.7rem; }
   .stats-bar   { padding: 1rem 1.25rem; }
 }
+
+/* ══════════════════════════════════════
+   Filters Card (Glassmorphism Dark Theme)
+   ═══════════════════════════════════════ */
+.filters-card {
+  background: linear-gradient(145deg, #161b2e, #1d233d);
+  border: 1px solid rgba(99, 102, 241, 0.2) !important;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5) !important;
+}
+
+.filters-card label {
+  color: rgba(255, 255, 255, 0.45) !important;
+  font-size: 0.72rem !important;
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+  margin-bottom: 0.35rem;
+}
+
+.filters-card .form-control,
+.filters-card .form-select {
+  background-color: rgba(13, 17, 23, 0.7) !important;
+  border: 1px solid rgba(99, 102, 241, 0.25) !important;
+  color: #e2e8f0 !important;
+  border-radius: 10px !important;
+  font-size: 0.9rem !important;
+  transition: all 0.3s ease;
+}
+
+.filters-card .form-control::placeholder {
+  color: rgba(255, 255, 255, 0.3);
+}
+
+.filters-card .form-control:focus,
+.filters-card .form-select:focus {
+  background-color: rgba(13, 17, 23, 0.9) !important;
+  border-color: #6366f1 !important;
+  box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.3) !important;
+  color: #fff !important;
+}
+
+.filters-card .input-group-text {
+  background-color: rgba(13, 17, 23, 0.7) !important;
+  border: 1px solid rgba(99, 102, 241, 0.25) !important;
+  border-radius: 10px 0 0 10px !important;
+  color: rgba(255, 255, 255, 0.4) !important;
+}
+
+.filters-card select option {
+  background-color: #1a1f36;
+  color: #e2e8f0;
+}
+
+.filters-card .btn-outline-light {
+  border-color: rgba(255, 255, 255, 0.2);
+  color: rgba(255, 255, 255, 0.7);
+  transition: all 0.2s ease;
+}
+
+.filters-card .btn-outline-light:hover {
+  background-color: rgba(255, 255, 255, 0.08);
+  border-color: rgba(255, 255, 255, 0.4);
+  color: #fff;
+}

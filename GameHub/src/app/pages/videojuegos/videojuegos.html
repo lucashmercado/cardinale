@@ -11,6 +11,92 @@
       <div class="header-divider mx-auto mt-3"></div>
     </div>
 
+    <!-- ── Filtros y Búsqueda Interactivo ── -->
+    <div class="card filters-card mb-5 border-0 shadow-lg rounded-4" id="filtersSection">
+      <div class="card-body p-4">
+        <div class="row g-3">
+          
+          <!-- Búsqueda por texto -->
+          <div class="col-md-4">
+            <label for="buscarInput" class="form-label fw-semibold text-muted small">Buscar</label>
+            <div class="input-group">
+              <span class="input-group-text bg-transparent border-end-0 text-muted">
+                <i class="bi bi-search"></i>
+              </span>
+              <input
+                id="buscarInput"
+                type="text"
+                class="form-control border-start-0 ps-0"
+                placeholder="Título, género o plataforma..."
+                [(ngModel)]="buscarTexto"
+                (ngModelChange)="aplicarFiltros()"
+              />
+            </div>
+          </div>
+
+          <!-- Filtrar por Género -->
+          <div class="col-sm-6 col-md-3">
+            <label for="generoSelect" class="form-label fw-semibold text-muted small">Filtrar por Género</label>
+            <select
+              id="generoSelect"
+              class="form-select"
+              [(ngModel)]="generoSeleccionado"
+              (change)="aplicarFiltros()"
+            >
+              <option value="">Todos los géneros</option>
+              @for (g of generos; track g) {
+                <option [value]="g">{{ g | titlecase }}</option>
+              }
+            </select>
+          </div>
+
+          <!-- Filtrar por Plataforma -->
+          <div class="col-sm-6 col-md-3">
+            <label for="plataformaSelect" class="form-label fw-semibold text-muted small">Filtrar por Plataforma</label>
+            <select
+              id="plataformaSelect"
+              class="form-select"
+              [(ngModel)]="plataformaSeleccionada"
+              (change)="aplicarFiltros()"
+            >
+              <option value="">Todas las plataformas</option>
+              @for (p of plataformas; track p) {
+                <option [value]="p">{{ p }}</option>
+              }
+            </select>
+          </div>
+
+          <!-- Ordenamiento -->
+          <div class="col-md-2 d-flex align-items-end">
+            <div class="w-100">
+              <label for="ordenSelect" class="form-label fw-semibold text-muted small">Ordenar por</label>
+              <select
+                id="ordenSelect"
+                class="form-select"
+                [(ngModel)]="ordenSeleccionado"
+                (change)="aplicarFiltros()"
+              >
+                <option value="destacados">Destacados</option>
+                <option value="precio-asc">Precio: Menor a Mayor</option>
+                <option value="precio-desc">Precio: Mayor a Menor</option>
+                <option value="disponible">Disponibilidad</option>
+              </select>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Botón para Limpiar Filtros -->
+        @if (buscarTexto || generoSeleccionado || plataformaSeleccionada || ordenSeleccionado !== 'destacados') {
+          <div class="d-flex justify-content-end mt-3">
+            <button class="btn btn-outline-light btn-sm rounded-pill px-3 py-1" (click)="limpiarFiltros()">
+              <i class="bi bi-x-circle me-1"></i>Limpiar filtros
+            </button>
+          </div>
+        }
+      </div>
+    </div>
+
     <!-- ── Stats bar ── -->
     <div class="stats-bar d-flex justify-content-center gap-4 mb-5 flex-wrap">
       <div class="stat-item">
