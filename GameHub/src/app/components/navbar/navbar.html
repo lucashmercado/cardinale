@@ -1,0 +1,47 @@
+<nav class="navbar navbar-expand-lg navbar-dark sticky-top" id="mainNavbar">
+  <div class="container">
+    <!-- Brand -->
+    <a class="navbar-brand d-flex align-items-center gap-2" routerLink="/home">
+      <i class="bi bi-controller fs-4"></i>
+      <span class="fw-bold">GameHub</span>
+    </a>
+
+    <!-- Toggler (mobile) -->
+    <button
+      class="navbar-toggler"
+      type="button"
+      data-bs-toggle="collapse"
+      data-bs-target="#navContent"
+      aria-controls="navContent"
+      aria-expanded="false"
+      aria-label="Toggle navigation"
+    >
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <!-- Links -->
+    <div class="collapse navbar-collapse" id="navContent">
+      <ul class="navbar-nav ms-auto gap-1">
+        <li class="nav-item">
+          <a
+            class="nav-link px-3 rounded-pill"
+            routerLink="/home"
+            routerLinkActive="active"
+            [routerLinkActiveOptions]="{ exact: true }"
+          >
+            <i class="bi bi-house-door-fill me-1"></i>Inicio
+          </a>
+        </li>
+        <li class="nav-item">
+          <a
+            class="nav-link px-3 rounded-pill"
+            routerLink="/videojuegos"
+            routerLinkActive="active"
+          >
+            <i class="bi bi-joystick me-1"></i>Videojuegos
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
