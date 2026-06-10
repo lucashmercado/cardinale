@@ -19,4 +19,9 @@ import { RouterLink, RouterLinkActive } from '@angular/router';
   templateUrl: './navbar.html',
   styleUrl: './navbar.css'
 })
-export class NavbarComponent {}
+export class NavbarComponent {
+  /**
+   * Controla si el menú colapsable de navegación está cerrado en pantallas móviles.
+   */
+  isMenuCollapsed = true;
+}
